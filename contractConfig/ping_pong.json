@@ -1,0 +1,595 @@
+{
+  "version": "0.1.0",
+  "name": "ping_pong",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "admin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "mintState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "config",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "programAsSigner",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pingMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pongMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pingpongMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "coordinator",
+          "isMut": false,
+          "isSigner": false,
+          "docs": ["CHECK"]
+        },
+        {
+          "name": "treasury",
+          "isMut": false,
+          "isSigner": false,
+          "docs": ["CHECK"]
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [],
+      "returns": {
+        "defined": "InitializeOutput"
+      }
+    },
+    {
+      "name": "mintPing",
+      "accounts": [
+        {
+          "name": "wallet",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "lastMintTime",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "config",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pingMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "programAsSigner",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "mintState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "treasury",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "evmAddress",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mintPingMid",
+      "accounts": [
+        {
+          "name": "recipient",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "config",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "coordinator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pingMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "programAsSigner",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "mintId",
+          "type": "string"
+        },
+        {
+          "name": "evmAddress",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mintPingFinal",
+      "accounts": [
+        {
+          "name": "recipient",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "config",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "coordinator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pingMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "programAsSigner",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "mintId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mintPong",
+      "accounts": [
+        {
+          "name": "recipient",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "config",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "coordinator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "pongMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "programAsSigner",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "mintPingpong",
+      "accounts": [
+        {
+          "name": "wallet",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "config",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pingMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pongMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pingpongMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pingTokenAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pongTokenAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pingpongTokenAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "programAsSigner",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Config",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "coordinator",
+            "type": "publicKey"
+          },
+          {
+            "name": "treasury",
+            "type": "publicKey"
+          },
+          {
+            "name": "pingMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "pongMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "pingpongMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "mintState",
+            "type": "publicKey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LastMintTime",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lastMintTime",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MintState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "totalMints",
+            "type": "u64"
+          },
+          {
+            "name": "fee",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "InitializeOutput",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pingMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "pongMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "pingpongMint",
+            "type": "publicKey"
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "FinalTokenMinted",
+      "fields": [
+        {
+          "name": "mintId",
+          "type": "string",
+          "index": false
+        },
+        {
+          "name": "account",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "amount",
+          "type": "u64",
+          "index": false
+        },
+        {
+          "name": "timestamp",
+          "type": "u64",
+          "index": false
+        }
+      ]
+    },
+    {
+      "name": "InitialTokenMinted",
+      "fields": [
+        {
+          "name": "mintId",
+          "type": "string",
+          "index": false
+        },
+        {
+          "name": "account",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "amount",
+          "type": "u64",
+          "index": false
+        },
+        {
+          "name": "evmAddress",
+          "type": "string",
+          "index": false
+        },
+        {
+          "name": "timestamp",
+          "type": "u64",
+          "index": false
+        }
+      ]
+    },
+    {
+      "name": "MidTokenMinted",
+      "fields": [
+        {
+          "name": "mintId",
+          "type": "string",
+          "index": false
+        },
+        {
+          "name": "account",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "amount",
+          "type": "u64",
+          "index": false
+        },
+        {
+          "name": "evmAddress",
+          "type": "string",
+          "index": false
+        },
+        {
+          "name": "timestamp",
+          "type": "u64",
+          "index": false
+        }
+      ]
+    },
+    {
+      "name": "PingPongTokenMinted",
+      "fields": [
+        {
+          "name": "account",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "amount",
+          "type": "u64",
+          "index": false
+        },
+        {
+          "name": "timestamp",
+          "type": "u64",
+          "index": false
+        }
+      ]
+    },
+    {
+      "name": "PongTokenMinted",
+      "fields": [
+        {
+          "name": "account",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "amount",
+          "type": "u64",
+          "index": false
+        },
+        {
+          "name": "timestamp",
+          "type": "u64",
+          "index": false
+        }
+      ]
+    }
+  ]
+}

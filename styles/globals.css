@@ -1,0 +1,46 @@
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root,
+[data-theme] {
+  background: oklch(var(--b2));
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+.btn {
+  @apply shadow-md;
+}
+
+.btn.btn-ghost {
+  @apply shadow-none;
+}
+
+input{
+  background: #fff;
+}
+
+.homeBg{
+  background-image: url('~~/public/img/bg.png');
+}
+
+
+.parallelogram {
+  transform: skew(-35deg); /* 向左倾斜20度 */
+}
