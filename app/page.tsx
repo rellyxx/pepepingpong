@@ -16,10 +16,10 @@ const Home: NextPage = () => {
           <div className="text-[32px] py-[20px]">Forge your favorite meme coin!</div>
           <div className="text-[24px]">Start here</div>
         </div>
-        <div className="flex">
+        <div className="flex justify-between w-[880px]">
           <PepePingCard/>
           <PepePongCard/>
-          <PepePingPongCard/>
+          {/* <PepePingPongCard/> */}
         </div>
       </div>
   );
